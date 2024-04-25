@@ -1,0 +1,26 @@
+{
+ "manifest_version": 3,
+ "name": "LeetBeats",
+ "version": "1.0",
+ "description": "Because this deserves a round of applause",
+ "permissions": ["activeTab", "storage","scripting","tabs"],
+ "background": {
+   "service_worker": "background.js"
+ },
+ 
+ "host_permissions": [
+  "https://leetcode.com/problems/*"
+],
+ "content_scripts": [
+   {
+     "matches": ["https://leetcode.com/problems/*"],
+     "js": ["content.js"]
+   }
+ ],
+ "action": {
+   "default_popup": "popup.html"
+ },
+ "icons": {
+   "16": "download.jpeg"
+ }
+}
