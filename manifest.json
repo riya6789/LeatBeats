@@ -9,7 +9,7 @@
  },
  
  "host_permissions": [
-  "https://leetcode.com/problems/*"
+  "https://leetcode.com/*"
 ],
  "content_scripts": [
    {

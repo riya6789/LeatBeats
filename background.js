@@ -1,5 +1,3 @@
-alert("back");
-
 // function playAudio() {
 //   const audio = new Audio("success_sound.mp3"); // Replace "success_sound.mp3" with the path to your audio file
 //   audio.play();
@@ -12,7 +10,6 @@ alert("back");
 // Listen for messages from content script
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.action === "codeAccepted") {
-    alert("back");
     console.log("back");
     // playAudio();
     // throwConfetti();
