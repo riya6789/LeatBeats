@@ -1,3 +1,12 @@
+// console.log("back");
+// chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+//   if (message.action === "codeAccepted") {
+//     console.log("Background.js is executing."); 
+//     // playAudio();
+//     // throwConfetti();
+//   }
+// });
+
 // function playAudio() {
 //   const audio = new Audio("success_sound.mp3"); // Replace "success_sound.mp3" with the path to your audio file
 //   audio.play();
@@ -7,14 +16,14 @@
 //   console.log("Confetti thrown!");
 // }
 
-// Listen for messages from content script
-chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-  if (message.action === "codeAccepted") {
-    console.log("back");
-    // playAudio();
-    // throwConfetti();
-  }
-});
+
+// chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+//   if (message.action === "codeAccepted") {
+//     console.log("back");
+//     // playAudio();
+//     // throwConfetti();
+//   }
+// });
 
 
 // chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
