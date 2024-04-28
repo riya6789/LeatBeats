@@ -1,10 +1,10 @@
-document.addEventListener('DOMContentLoaded', function() {
-  const submitButton = document.querySelector('button[data-e2e-locator="console-submit-button"]'); 
+setTimeout(() => {
+  const submitButton = document.querySelector('button[data-e2e-locator="console-submit-button"]');
   if (submitButton) {
     submitButton.addEventListener('click', () => {
       // Send message to background.js indicating that the submit button was clicked
       chrome.runtime.sendMessage({ action: "submitButtonClicked" });
-      
+
       // Check for changes in the submission result
       const observer = new MutationObserver((mutationsList, observer) => {
         mutationsList.forEach(mutation => {
@@ -24,14 +24,16 @@ document.addEventListener('DOMContentLoaded', function() {
       observer.observe(document.body, { subtree: true, childList: true });
     });
   }
-});
+}, 1000)
+
+
 
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.action === "codeAccepted") {
-   chrome.tabs.executeScript({
+    chrome.tabs.executeScript({
       file: 'background.js'
     });
- }
+  }
 });
 
 
